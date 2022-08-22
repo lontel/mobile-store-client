@@ -1,10 +1,13 @@
-import './App.css';
+import './App.css'
+import AppRoutes from './routes/AppRoutes'
+import UserMessage from './components/UserMessage/UserMessage'
 
 function App() {
   return (
-    <div className="App">
-      <h1>hola</h1>
-    </div>
+    <>
+      <AppRoutes />
+      <UserMessage />
+    </>
   )
 }
 
