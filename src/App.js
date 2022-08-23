@@ -2,7 +2,7 @@ import './App.css'
 import AppRoutes from './routes/AppRoutes'
 import UserMessage from './components/UserMessage/UserMessage'
 
-function App() {
+function App () {
   return (
     <>
       <AppRoutes />
@@ -11,4 +11,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
