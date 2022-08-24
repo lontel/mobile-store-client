@@ -21,7 +21,7 @@ const NavBar = () => {
                         <Nav.Link href="#action1">All Products</Nav.Link>
                         <Nav.Link href="#action2">Top Deals</Nav.Link>
                         <NavDropdown title="Back to School" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">College Resources</NavDropdown.Item>
+                            <NavDropdown.Item href="#">College Resources</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">
                                 K-12 Tech
                             </NavDropdown.Item>
@@ -34,7 +34,7 @@ const NavBar = () => {
                             Outlet
                         </Nav.Link>
                         <NavDropdown title="Account" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Create Account</NavDropdown.Item>
+                            <NavDropdown.Item href="/account/sign-up">Create Account</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">
                                 Sign In
                             </NavDropdown.Item>

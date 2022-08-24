@@ -8,17 +8,18 @@
     right: 0;
     height: 7%;
     margin: 0%;
-    
+
 }
 
 .copy-right {
     color: white;
 }
 
-.list{
+.list {
+    margin-left: 9%;
     display: flex;
-   width: 80%;
-   justify-content: space-evenly;
+    width: 80%;
+    justify-content: space-evenly;
 }
 
 .list a {
