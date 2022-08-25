@@ -35,7 +35,7 @@ const NavBar = () => {
                         </Nav.Link>
                         <NavDropdown title="Account" id="navbarScrollingDropdown">
                             <NavDropdown.Item href="/account/sign-up">Create Account</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">
+                            <NavDropdown.Item href="/account/login">
                                 Sign In
                             </NavDropdown.Item>
                             <NavDropdown.Divider />

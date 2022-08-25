@@ -14,8 +14,10 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import PhotoCamera from '@mui/icons-material/PhotoCamera'
-import { useState } from 'react'
+import {  useContext } from 'react'
 import authService from './../../services/auth.services'
+import { MessageContext } from './../../contexts/userMessage.context'
+import { useNavigate } from 'react-router-dom'
 
 
 function Copyright(props) {
@@ -31,19 +33,16 @@ function Copyright(props) {
     )
 }
 
+
 const theme = createTheme()
 
-export default function SignUp() {
+export default function RegisterForm () {
 
-    const [signupData, setSignupData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        avatar: '',
-    })      
+    const { setShowMessage } = useContext(MessageContext)
+    const navigate = useNavigate()
 
 const handleSubmit = (event) => {
+
     event.preventDefault()
     const data = new FormData(event.currentTarget)
     const userData = {
@@ -52,14 +51,17 @@ const handleSubmit = (event) => {
         email: data.get('email'),
         password: data.get('password')
     }
+
     authService
         .signup(userData)
         .then(({ data2 }) => {
-            // setShowMessage({
-            //     show: true, title: `Welcome, ${data.user.username}`, text: 'You have successfully registered'
-            // })
-            // navigate('/account/login')
-            console.log(data2)
+            setShowMessage({
+                show: true, title: `Welcome, ${userData.firstName} ${userData.lastName}`, text: 'You have successfully registered'
+            })
+            navigate('/account/login')
+            console.log(data2, 'esto es lo que busco')
+            console.log(userData, 'esto es lo que busco2')
+
         })
         .catch(err => console.log(err))
 }
@@ -136,7 +138,7 @@ return (
                                 component="label"
                                 fullWidth>
                                 <PhotoCamera />
-                                Avatar *
+                                profile avatar *
                                 <input hidden accept="image/*" multiple type="file" />
                             </Button>
 
