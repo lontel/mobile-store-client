@@ -1,5 +1,4 @@
 import './RegisterForm.css'
-// import * as React from 'react'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -58,7 +57,6 @@ export default function RegisterForm() {
         authService
             .signup(signupData)
             .then(({data}) => {
-                console.log('esto es la resp axios', data)
                 setShowMessage({
                     show: true, title: `Welcome, ${signupData.firstName} ${signupData.lastName}`, text: 'You have successfully registered'
                 })
@@ -81,7 +79,6 @@ export default function RegisterForm() {
         uploadServices
             .uploadimage(formData)
             .then(({ data }) => {
-                console.log(data, 'ujagsfgwdugfui')
                 setIsLoading(false)
                 setSignupData({ ...signupData, avatar: data.cloudinary_url })
             })
@@ -164,7 +161,7 @@ export default function RegisterForm() {
                                     fullWidth>
                                     <PhotoCamera />
                                     profile avatar *
-                                    <input hidden accept="image/*" multiple type="file" onChange={handleFileInput} />
+                                    <input hidden accept="image/*" multiple type="file" onChange={handleFileInput}  />
                                 </Button>
 
                             </Grid>
@@ -176,6 +173,7 @@ export default function RegisterForm() {
                             </Grid>
                         </Grid>
                         <Button
+                            disabled={isLoading}
                             type="submit"
                             fullWidth
                             variant="contained"
