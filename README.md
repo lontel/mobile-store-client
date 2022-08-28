@@ -13,6 +13,6 @@
 `/account/delete/:id`|Delete specific account|
 `/items`|Get all items|
 `/item/details/:id`|Item details|
-`item/create`|Render create item form|
+`item/save`|Create a new item |
 `/item/edit/:id`| Update item|
 `/item/delete/:id`| Delete item|

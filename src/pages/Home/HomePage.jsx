@@ -1,5 +1,5 @@
 import Footer from "../../components/Footer/Footer"
-import ItemCard from "../../components/ItemCard/ItemCard"
+import ItemsList from "../../components/ItemsList/ItemsList"
 import NavBar from "../../components/NavBar/NavBar"
 
 const HomePage = () => {
@@ -8,7 +8,7 @@ const HomePage = () => {
         <>
             <NavBar />
             <Footer />
-            <ItemCard />
+            <ItemsList />
         </>
           
     )
