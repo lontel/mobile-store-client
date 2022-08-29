@@ -44,7 +44,6 @@ const ItemsList = () => {
             {
                 <Row>
                     <Col>
-                        <h1 >List of Items</h1>
                         {
                             user?.role === 'ADMIN' &&
                             <button>
@@ -53,43 +52,44 @@ const ItemsList = () => {
                         }
                     </Col>
                     <hr></hr>
+
                     {/* <SearchBar filteredItems={filteredItems} /> */}
                     {
                         items.length ?
 
                             items.map(item => {
                                 return (
-                                    <Col md={3} key={item._id}>
-                                        <Col  >
-                                            <ItemCard {...item} />
+                                        <Col  md={3} key={item._id}>
+                                        <Col className='juji'>
+                                                <ItemCard {...item} />
+                                            </Col>
                                         </Col>
-                                    </Col>
-                                )
+                                        )
 
                             })
 
-                            :
-                            <>
-                                <h1 className='event-notFound' >Ohhhh no... no item was found</h1>
-                                <Image src='#' className='searchImg' />
-                            </>
+                                        :
+                                        <>
+                                            <h1 className='event-notFound' >Ohhhh no... no item was found</h1>
+                                            <Image src='#' className='searchImg' />
+                                        </>
 
                     }
 
-                    <Modal show={showModal} onHide={closeModal}>
-                        <Modal.Header className='modal-global' closeButton>
-                            <Modal.Title>Create New Item</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body className='modal-body'>
-                            <ItemForm closeModal={closeModal} loadItems={loadItems} />
-                        </Modal.Body>
-                    </Modal>
+                                        <Modal show={showModal} onHide={closeModal}>
+                                            <Modal.Header className='modal-global' closeButton>
+                                                <Modal.Title>Create New Item</Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body className='modal-body'>
+                                                <ItemForm closeModal={closeModal} loadItems={loadItems} />
+                                            </Modal.Body>
+                                        </Modal>
 
-                </Row>
+                                    </Row>
 
             }
         </>
     )
 }
 
-export default ItemsList
+            export default ItemsList

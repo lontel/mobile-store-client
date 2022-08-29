@@ -68,9 +68,6 @@ const NavBar = () => {
                             </>
                             }
                         </NavDropdown>
-                        <Nav.Link href="/item/save" >
-                            New Item
-                        </Nav.Link>
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control
