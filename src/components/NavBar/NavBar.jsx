@@ -5,8 +5,21 @@ import Form from 'react-bootstrap/Form'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import { AuthContext } from '../../contexts/auth.context'
+import { MessageContext } from '../../contexts/userMessage.context'
+import { useContext } from 'react'
+
 
 const NavBar = () => {
+
+    const { user, logoutUser } = useContext(AuthContext)
+    const { setShowMessage } = useContext(MessageContext)
+
+    const logout = () => {
+        setShowMessage({ show: true, title: 'Good bye!', text: 'Your session has been succesfully closed' })
+        logoutUser()
+    }
+
     return(
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container fluid>
@@ -34,14 +47,26 @@ const NavBar = () => {
                             Outlet
                         </Nav.Link>
                         <NavDropdown title="Account" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="/account/sign-up">Create Account</NavDropdown.Item>
+                            {user?
+                            <>
+                            <NavDropdown.Item href="#">
+                                My profile
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item onClick={logout}>
+                                Log out
+                            </NavDropdown.Item>
+                            </>
+                            :
+                            <>
+                            <NavDropdown.Item href="/account/sign-up">
+                                Create Account
+                                </NavDropdown.Item>
                             <NavDropdown.Item href="/account/login">
                                 Sign In
                             </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">
-                                Log out
-                            </NavDropdown.Item>
+                            </>
+                            }
                         </NavDropdown>
                         <Nav.Link href="/item/save" >
                             New Item

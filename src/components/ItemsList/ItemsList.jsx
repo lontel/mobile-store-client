@@ -45,28 +45,34 @@ const ItemsList = () => {
                 <Row>
                     <Col>
                         <h1 >List of Items</h1>
-                        <button> <span onClick={openModal} className='addPlus' >+ Add new item</span></button>
+                        {
+                            user?.role === 'ADMIN' &&
+                            <button>
+                                <span onClick={openModal} className='addPlus' >+ Add new item</span>
+                            </button>
+                        }
                     </Col>
                     <hr></hr>
                     {/* <SearchBar filteredItems={filteredItems} /> */}
-                    {items.length ?
+                    {
+                        items.length ?
 
-                        items.map(item => {
-                            return (
-                                <Col md={3} key={item._id}>
-                                    <Col  >
-                                        <ItemCard {...item} />
+                            items.map(item => {
+                                return (
+                                    <Col md={3} key={item._id}>
+                                        <Col  >
+                                            <ItemCard {...item} />
+                                        </Col>
                                     </Col>
-                                </Col>
-                            )
+                                )
 
-                        })
+                            })
 
-                        :
-                        <>
-                            <h1 className='event-notFound' >Ohhhh no... no item was found</h1>
-                            <Image src='#' className='searchImg' />
-                        </>
+                            :
+                            <>
+                                <h1 className='event-notFound' >Ohhhh no... no item was found</h1>
+                                <Image src='#' className='searchImg' />
+                            </>
 
                     }
 
