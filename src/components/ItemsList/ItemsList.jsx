@@ -60,7 +60,7 @@ const ItemsList = () => {
                             items.map(item => {
                                 return (
                                         <Col  md={3} key={item._id}>
-                                        <Col className='juji'>
+                                        <Col className='card-list'>
                                                 <ItemCard {...item} />
                                             </Col>
                                         </Col>

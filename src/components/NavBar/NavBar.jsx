@@ -20,7 +20,7 @@ const NavBar = () => {
         logoutUser()
     }
 
-    return(
+    return (
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container fluid>
                 <Navbar.Brand href="/">Tech Store</Navbar.Brand>
@@ -47,25 +47,25 @@ const NavBar = () => {
                             Outlet
                         </Nav.Link>
                         <NavDropdown title="Account" id="navbarScrollingDropdown">
-                            {user?
-                            <>
-                            <NavDropdown.Item href="#">
-                                My profile
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item onClick={logout}>
-                                Log out
-                            </NavDropdown.Item>
-                            </>
-                            :
-                            <>
-                            <NavDropdown.Item href="/account/sign-up">
-                                Create Account
-                                </NavDropdown.Item>
-                            <NavDropdown.Item href="/account/login">
-                                Sign In
-                            </NavDropdown.Item>
-                            </>
+                            {user ?
+                                <>
+                                    <NavDropdown.Item href="#"><img className='img-profile-nav' src={user.avatar}  ></img>
+                                        <span> My profile</span> 
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Divider />
+                                    <NavDropdown.Item onClick={logout}>
+                                        Log out
+                                    </NavDropdown.Item>
+                                </>
+                                :
+                                <>
+                                    <NavDropdown.Item href="/account/sign-up">
+                                        Create Account
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item href="/account/login">
+                                        Sign In
+                                    </NavDropdown.Item>
+                                </>
                             }
                         </NavDropdown>
                     </Nav>
@@ -81,7 +81,7 @@ const NavBar = () => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-        )
-    }
+    )
+}
 
 export default NavBar

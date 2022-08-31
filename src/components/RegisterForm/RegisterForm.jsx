@@ -163,7 +163,6 @@ export default function RegisterForm() {
                                     profile avatar *
                                     <input hidden accept="image/*" multiple type="file" onChange={handleFileInput}  />
                                 </Button>
-
                             </Grid>
                             <Grid item xs={12}>
                                 <FormControlLabel

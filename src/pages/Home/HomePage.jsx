@@ -8,11 +8,10 @@ const HomePage = () => {
 
     return (
         <>
-                <NavBar />
-                <h1 >Deal of the Day </h1>
-                <Carousel />
-                <ItemsList />
-                <Footer />
+            <NavBar />
+            <Carousel />
+            <ItemsList />
+            <Footer />
         </>
 
     )

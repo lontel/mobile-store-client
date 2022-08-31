@@ -2,13 +2,12 @@
     display: flex;
     align-items: center;
     background-color: #212529;
-    position: fixed;
+    position: relative;
     bottom: 0px;
     left: 0;
     right: 0;
-    height: 7%;
+    height: 3rem;
     margin: 0%;
-    /* height: 40px; */
     width: 100%;
 }
 
