@@ -1,10 +1,9 @@
 import './ItemCard.css'
-
-import { Card, Button, Image } from 'react-bootstrap'
+import { Card, Image } from 'react-bootstrap'
 import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
 import { Link } from 'react-router-dom'
 import Carousel from 'react-bootstrap/Carousel'
+
 
 function ItemCard({ name, price, images }) {
 

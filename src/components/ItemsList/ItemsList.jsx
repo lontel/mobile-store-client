@@ -59,37 +59,37 @@ const ItemsList = () => {
 
                             items.map(item => {
                                 return (
-                                        <Col  md={3} key={item._id}>
+                                    <Col md={3} key={item._id}>
                                         <Col className='card-list'>
-                                                <ItemCard {...item} />
-                                            </Col>
+                                            <ItemCard {...item} />
                                         </Col>
-                                        )
+                                    </Col>
+                                )
 
                             })
 
-                                        :
-                                        <>
-                                            <h1 className='event-notFound' >Ohhhh no... no item was found</h1>
-                                            <Image src='#' className='searchImg' />
-                                        </>
+                            :
+                            <>
+                                <h1 className='event-notFound' >Ohhhh no... no item was found</h1>
+                                <Image src='#' className='searchImg' />
+                            </>
 
                     }
 
-                                        <Modal show={showModal} onHide={closeModal}>
-                                            <Modal.Header className='modal-global' closeButton>
-                                                <Modal.Title>Create New Item</Modal.Title>
-                                            </Modal.Header>
-                                            <Modal.Body className='modal-body'>
-                                                <ItemForm closeModal={closeModal} loadItems={loadItems} />
-                                            </Modal.Body>
-                                        </Modal>
+                    <Modal show={showModal} onHide={closeModal}>
+                        <Modal.Header className='modal-global' closeButton>
+                            <Modal.Title>Create New Item</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body className='modal-body'>
+                            <ItemForm closeModal={closeModal} loadItems={loadItems} />
+                        </Modal.Body>
+                    </Modal>
 
-                                    </Row>
+                </Row>
 
             }
         </>
     )
 }
 
-            export default ItemsList
+export default ItemsList

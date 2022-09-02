@@ -30,7 +30,7 @@ const ItemForm = ({ closeModal, loadItems }) => {
 
         itemService
             .saveItem(itemData)
-            .then(() => {
+            .then((data) => {
                 loadItems()
                 setShowMessage({ show: true, title: `Item created`, text: `Item registered succesfully!` })
             })
@@ -48,14 +48,13 @@ const ItemForm = ({ closeModal, loadItems }) => {
         uploadService
             .uploadimages(formData)
             .then(({ data }) => {
-                console.log(data)
                 setItemData({ ...itemData, images: data.cloudinary_urls })
             })
             .catch(err => console.log(err))
 
     }
 
-    const { name, category, images, description, rating, price, publisher, relaseDate } = itemData
+    const { name, category, description, rating, price, publisher, relaseDate } = itemData
 
     return (
 

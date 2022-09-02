@@ -5,7 +5,7 @@ class BannerService {
     constructor() {
 
         this.api = axios.create({
-            baseURL: `${process.env.REACT_APP_API_URL}/item`
+            baseURL: `${process.env.REACT_APP_API_URL}/banner`
         })
         this.api.interceptors.request.use((config) => {
 
@@ -19,14 +19,13 @@ class BannerService {
         })
     }
 
-    saveItem(itemData) {
-        return this.api.post('/save', itemData)
+    saveImages(pictures) {
+        return this.api.post('/savePhotos', pictures)
     }
 
-    getAllItems() {
-        return this.api.get('/list')
+    getAllImages() {
+        return this.api.get('/photosList')
     }
-
 
 }
 
